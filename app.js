@@ -12,6 +12,8 @@ mongoose.connect(url, { useNewUrlParser: true });
 const con = mongoose.connection;
 app.use(express.urlencoded({ extended: false }));
 
+app.use(express.static("./public"));
+
 con.on("open", () => {
   console.log("connected broooooooooooooo");
 });
